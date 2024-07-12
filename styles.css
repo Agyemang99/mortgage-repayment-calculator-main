@@ -1,0 +1,273 @@
+:root{
+    --Lime: hsl(61, 70%, 52%);
+    --Red: hsl(4, 69%, 50%);
+    --White: hsl(0, 0%, 100%);
+    --Slate-100: hsl(202, 86%, 94%);
+    --Slate-300: hsl(203, 41%, 72%);
+    --Slate-500: hsl(200, 26%, 54%);
+    --Slate-700: hsl(200, 24%, 40%);
+    --Slate-900: hsl(202, 55%, 16%);
+    --Slate-1000:hsl(210,55%,10%);
+    --violet: hsl(228, 45%, 44%);
+}
+
+@font-face {
+    font-family:NormalFont;
+    src: url(./assets/fonts/PlusJakartaSans-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: Italics;
+    src: url(./assets/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Slate-100);
+    font-family: NormalFont;
+    min-height: 100vh;
+}
+
+#reset-btn{
+    background-color: unset;
+    border:none;
+    text-decoration: underline;
+    text-decoration-color: var(--Slate-300);
+    cursor: pointer;
+    font-size: 16px;
+}
+#reset-btn,label,legend{
+    color:var(--Slate-700);
+    font-weight: 600;
+}
+h2{
+    color: var(--Slate-900);
+}
+#submit-btn{
+    background-color: var(--Lime);
+    border: none;
+    padding:10px;
+    border-radius: 50px;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size:15px;
+    color: var(--Slate-900);
+    font-weight: 700;
+}
+#submit-btn img{
+    margin-bottom: -5px;
+}
+input{
+    border: 1px solid var(--Slate-500);
+    padding: 16px;
+    border-radius: 5px;
+}
+
+.radio {
+    border: 1px solid var(--Slate-500);
+    border-radius: 5px;
+}
+
+
+.radio-field{
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.radio-input{
+    display: none;
+}
+
+.radio-toggle{
+    height: 1em;
+    width: 1em;
+    border: 2px solid var(--Slate-700);
+    border-radius: 50%;
+    margin-right: 15px;
+    box-sizing: border-box;
+    padding: 2px;
+    margin-bottom: 15px;
+}
+
+.radio-toggle::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: var(--Lime);
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 0.15s;
+}
+
+
+.radio-input:checked + .radio-toggle::after{
+    transform: scale(1);
+}
+
+
+
+
+.radio-container div{
+    margin-top: 1rem;
+}
+
+input[type="number"]{
+    margin-top: 1rem;
+}
+.select-container .radio-container .radio label{
+    color: var(--Slate-900);
+    font-weight: 600;
+}
+main{
+    background-color: var(--White);
+    padding: 2rem;
+}
+
+.result-container{
+    background-color: var(--Slate-900);
+    padding: 1rem;
+}
+
+.result-container p ,.result-container h2{
+    color: var(--White);
+    text-align: center;
+}
+.result-container img{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+}
+.result-container p{
+    color: var(--Slate-500);
+    margin-top: 1rem;
+}
+input::placeholder{
+    background-color:var(--Slate-100);
+    width: 20%;
+    padding: 16px;
+    text-align:center;
+    font-size:20px;
+    font-weight: 700;
+    
+}
+#m1:placeholder-shown{
+    direction:ltr;
+}
+:placeholder-shown{
+    direction: rtl;
+}
+
+input:focus{
+    border: 1px solid var(--Lime);
+    outline: unset;
+}
+.header,.amount-container,.mortgage-term,.interest,.select-container,.submit-btn{
+    margin:1rem;
+}
+
+
+.outcome{
+    box-sizing: border-box;
+}
+.outcome h1{
+    text-align:start;
+    color: var(--Lime);  
+}
+.outcome p{
+    margin-bottom: 1rem;
+}
+.outcome p,.outcome h2{
+    text-align: start;
+}
+.outcome div{
+    background-color: var(--Slate-1000);
+    padding: 2rem;
+    border-top: 5px solid var(--Lime);
+    border-radius: 10px;
+}
+.outcome hr{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    
+}
+
+
+
+@media screen and (min-width:480px) {
+    input{
+        width: 100%;
+    }
+    .mortgage-container{
+        margin: 2rem;
+    }
+    #reset-btn{
+        margin-top: 1rem;
+    }
+    
+}
+@media screen and (min-width:768px) {
+    .header{
+        display: flex;
+        justify-content: space-between;
+    }
+    #reset-btn{
+        margin: unset;
+        margin-top: 0.5rem;
+    }
+    .rate-container{
+        display: flex;
+    }
+    
+}
+
+@media screen and (min-width:959px) {
+    .mortgage-container{
+        display: flex;
+        background-color: var(--White);
+        border-radius: 20px;
+    }
+    .result-container{
+        border-bottom-left-radius:10rem;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    .result-container img{
+        position:relative;
+        top:40%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    #submit-btn{
+        width: 60%;
+    }
+    .result-text{
+        margin-top:10rem;
+    }
+    main{
+        border-radius: 20px;
+    }
+
+    .outcome{
+        padding: 2rem;
+        justify-content: center;
+    }
+   
+    .outcome h2{
+        margin-top: 1rem;
+    }
+    .outcome p{
+        margin-top: 2rem;
+    }
+    
+}
